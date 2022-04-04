@@ -8,7 +8,7 @@ import static org.springframework.util.StringUtils.hasText;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jrools.rule.facts.RuleType;
+import com.jrools.rule.enums.RuleType;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;

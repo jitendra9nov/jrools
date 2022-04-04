@@ -1,7 +1,7 @@
 /* (C) 2022 */
 package com.jrools.rule.controller;
 
-import static com.jrools.rule.utils.ApiUtil.isValidURL;
+import static com.jrools.rule.utils.RuleUtil.isValidURL;
 import static org.springframework.util.StringUtils.hasLength;
 
 import com.jrools.rule.exception.ServiceException;

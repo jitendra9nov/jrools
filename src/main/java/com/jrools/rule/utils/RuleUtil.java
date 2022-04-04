@@ -11,11 +11,14 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.jrools.rule.facts.ExecutionInfo;
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,9 +28,9 @@ import org.slf4j.LoggerFactory;
  *
  * @author jitendrabhadouriya
  */
-public class ApiUtil {
+public class RuleUtil {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ApiUtil.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(RuleUtil.class);
 
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 
@@ -205,8 +208,14 @@ public class ApiUtil {
 		return "Y".equalsIgnoreCase(yn);
 	}
 
-	private ApiUtil() {
+	private RuleUtil() {
 
 		throw new IllegalStateException("Utility class should not be instanciated");
+	}
+
+	public static Map<Object, List<ExecutionInfo>> groupByFieldWithNullKeys(List<ExecutionInfo> result,
+			String fieldName, boolean ignoreCaseForString) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.tomcat.util.digester.Rule;
 
-import com.jrools.rule.facts.RuleType;
+import com.jrools.rule.enums.RuleType;
 
 public interface StorageService {
 	
