@@ -177,7 +177,7 @@ public class RuleUtil {
 		return tree;
 	}
 
-	public static Date parsedate(String dateString, String format) {
+	public static Date parseDate(String dateString, String format) {
 		Date date = null;
 
 		SimpleDateFormat formatter = new SimpleDateFormat(null != format ? format : DATE_TIME_FORMAT);
