@@ -43,9 +43,9 @@ public class Rule {
 	private String failureText;
 	private Integer executionOrder = 0;
 	private String attribute;
+	private String attributeLabel;
 	private AttributeType attributeType;
 	private NumericType numericType;
-	private String attributeLabel;
 	private String attributeBeanName;
 	private String containerBeanName;
 	private String containerName;
@@ -60,6 +60,7 @@ public class Rule {
 	private String pattern;
 
 	private String businessEntity;
+	private String businessAttribute;
 	private String referenceRule;
 	@JsonIgnore private RuleMatcher ruleMatcher;
 	
@@ -542,6 +543,22 @@ public class Rule {
 	public void setRuleMatcher(RuleMatcher ruleMatcher) {
 		this.ruleMatcher = ruleMatcher;
 	}
+
+	/**
+	 * @return the businessAttribute
+	 */
+	public String getBusinessAttribute() {
+		return businessAttribute;
+	}
+
+	/**
+	 * @param businessAttribute the businessAttribute to set
+	 */
+	public void setBusinessAttribute(String businessAttribute) {
+		this.businessAttribute = businessAttribute;
+	}
+	
+	
 
 
 }

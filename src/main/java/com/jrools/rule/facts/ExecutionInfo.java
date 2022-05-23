@@ -29,7 +29,7 @@ public class ExecutionInfo {
 	private String  attribute;
 	private String  attributeLabel;
 	private AttributeType  attributeType;
-	private Integer  Order;
+	private Integer  order;
 	
 	@JsonInclude(JsonInclude.Include.ALWAYS)
 	private Object  value;
@@ -131,7 +131,7 @@ public class ExecutionInfo {
 	 * @return the order
 	 */
 	public Integer getOrder() {
-		return Order;
+		return order;
 	}
 	/**
 	 * @return the value
@@ -276,7 +276,7 @@ public class ExecutionInfo {
 	 * @param order the order to set
 	 */
 	public void setOrder(Integer order) {
-		Order = order;
+		this.order = order;
 	}
 	/**
 	 * @param value the value to set

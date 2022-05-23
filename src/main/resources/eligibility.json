@@ -1,0 +1,75 @@
+[
+	{
+		"groupId": "G1",
+		"groupName": "G1",
+		"groupVerbiage": "description of group rule",
+		"ruleType": "eligibility",
+		"category": "A",
+		"priority": 100,
+		"combinator": "and",
+		"negator": false,
+		"skipIfNull": true,
+		"auxiliary": false,
+		"action": {
+			"display": "N"
+		},
+		"rules": [
+			{
+				"ruleId": "R1",
+				"ruleName": "R1",
+				"orderOfExecution": 1,
+				"attribute": "field1",
+				"attributeLabel": "Field One",
+				"failuretext": "some error",
+				"attributeType": "string",
+				"attributeBeanName": "com.rule.pckg.Class1",
+				"ContainerBeanName": "com.rule.pckg.Class2",
+				"containerName": "field2",
+				"operator": "isNull",
+				"skipIfNull": false,
+				"auxiliary": false,
+				"iterate":"any"
+			},
+			{
+				"ruleId": "R2",
+				"ruleName": "R2",
+				"orderOfExecution": 2,
+ 				"attributeLabel": "Field One",
+				"attributeType": "object",
+				"businessEntity": "entity",
+				"referenceRule": "E3",
+				"valueReference": "E4"
+			}
+		]
+	},
+	{
+		"groupId": "E3",
+		"groupName": "Reference",
+		"groupVerbiage": "description of group rule",
+		"ruleType": "reference",
+		"category": "F",
+		"priority": 0,
+		"combinator": "or",
+		"negator": false,
+		"skipIfNull": true,
+		
+		"rules": [
+			{
+				"ruleId": "R1",
+				"ruleName": "R1",
+				"orderOfExecution": 1,
+				"attribute": "field1",
+				"attributeLabel": "Field One",
+				"failuretext": "some error",
+				"attributeType": "string",
+				"attributeBeanName": "com.rule.pckg.Class1",
+				"ContainerBeanName": "com.rule.pckg.Class2",
+				"containerName": "field2",
+				"operator": "isNull",
+				"skipIfNull": false,
+				"auxiliary": false,
+				"iterate":"any"
+			}
+		]
+	}
+]

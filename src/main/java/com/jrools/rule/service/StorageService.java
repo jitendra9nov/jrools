@@ -2,9 +2,8 @@ package com.jrools.rule.service;
 
 import java.util.List;
 
-import org.apache.tomcat.util.digester.Rule;
-
 import com.jrools.rule.enums.RuleType;
+import com.jrools.rule.facts.Rule;
 
 public interface StorageService {
 	

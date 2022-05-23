@@ -8,6 +8,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jrools.rule.enums.RuleTypeInfo;
 
+/**
+ * @author jitendrabhadouriya
+ *
+ * @param <T>
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EngineRequest<T> {

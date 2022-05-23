@@ -30,6 +30,22 @@ import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author jitendrabhadouriya
+ * 
+ *         <pre>
+ * EngineResponse.builder().build().stream()
+				.filter(Filter.by(FieldNames.RULE_STATUS, Status.FAILURE).and(FieldNames.REFERENCE_VALUE, 233344))
+
+				.sort(Comparator.comparing(ExecutionInfo::getCategory, Comparator.nullsLast(Comparator.naturalOrder()))
+						.thenComparing(Comparator.comparing(ExecutionInfo::getRuleType,
+								Comparator.nullsLast(Comparator.reverseOrder()))))
+				.build().groupBy(FieldNames.REFERENCE, false);
+
+ *         </pre>
+ * 
+ *
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EngineResponse {
@@ -65,6 +81,7 @@ public class EngineResponse {
 	}
 
 	public static Builder builder() {
+		
 		return new Builder();
 	}
 
@@ -221,19 +238,20 @@ public class EngineResponse {
 		}
 
 		private static void populateFailureStatus(List<ExecutionInfo> collect, ExecutionInfo info) {
-			
-			if(!isEmpty(collect)) {
-				collect.forEach(failedInfo ->{
-					if((failedInfo.getReferenceValue() == info.getReferenceValue()) || (failedInfo.getReferenceValue().equals(info.getReferenceValue()))
-							&& failedInfo.getRuleType()== info.getRuleType()) {
+
+			if (!isEmpty(collect)) {
+				collect.forEach(failedInfo -> {
+					if ((failedInfo.getReferenceValue() == info.getReferenceValue())
+							|| (failedInfo.getReferenceValue().equals(info.getReferenceValue()))
+									&& failedInfo.getRuleType() == info.getRuleType()) {
 						info.setRuleStatus(FAILURE);
-						
-						if(failedInfo.getGroupId().equalsIgnoreCase(info.getGroupId())) {
+
+						if (failedInfo.getGroupId().equalsIgnoreCase(info.getGroupId())) {
 							info.setGroupStatus(FAILURE);
 						}
 					}
-					
-				});	
+
+				});
 			}
 		}
 
@@ -391,7 +409,7 @@ public class EngineResponse {
 		RULE_TYPE("ruleType", false), GROUP_ID("groupId", true), GROUP_STATUS("groupStatus", false),
 		RULE_ID("ruleId", true), RULE_STATUS("ruleStatus", false), ATTRIBUTE_STATUS("attributeStatus", false),
 		REFERENCE_VALUE("referenceValue", true), VALUE("value", true), CATEGORY("category", false),
-		ATTRIBUTE_LABEL("attributeLabel", true), ATTRIBUTE("attribute", true);
+		REFERENCE("reference", true), ATTRIBUTE_LABEL("attributeLabel", true), ATTRIBUTE("attribute", true);
 
 		private final String value;
 
